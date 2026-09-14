@@ -1,8 +1,8 @@
 :root {
     /* Tema Espartano / Fuego (Modo Oscuro por defecto) */
     --bg-color: #0b0c10;
-    --sidebar-bg: #070707;
-    --card-bg: #e68f0e;
+    --sidebar-bg: #12141c;
+    --card-bg: #191c28;
     --text-color: #e6e8ee;
     --text-muted: #8c96a8;
     --accent-color: #e63946; /* Rojo Kratos */
@@ -13,7 +13,7 @@
 }
 
 body.light-mode {
-    /* Tema Nórdico  */
+    /* Tema Nórdico / Hielo (Modo Claro) */
     --bg-color: #eef2f7;
     --sidebar-bg: #ffffff;
     --card-bg: #ffffff;

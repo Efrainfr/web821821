@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnModoOscuro.addEventListener("click", () => {
         document.body.classList.toggle("light-mode");
         const esClaro = document.body.classList.contains("light-mode");
-        btnModoOscuro.textContent = esClaro ? "Tema Espartano" : "Tema Nórdico";
+        btnModoOscuro.textContent = esClaro ? "🔥 Tema Espartano" : "❄️ Tema Nórdico";
     });
 
     // Contador de Visitas
