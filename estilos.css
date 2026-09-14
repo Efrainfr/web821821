@@ -1,0 +1,408 @@
+:root {
+    /* Tema Espartano / Fuego (Modo Oscuro por defecto) */
+    --bg-color: #0b0c10;
+    --sidebar-bg: #070707;
+    --card-bg: #e68f0e;
+    --text-color: #e6e8ee;
+    --text-muted: #8c96a8;
+    --accent-color: #e63946; /* Rojo Kratos */
+    --accent-hover: #c1121f;
+    --border-color: #2a2e3d;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    --radius: 10px;
+}
+
+body.light-mode {
+    /* Tema Nórdico  */
+    --bg-color: #eef2f7;
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-color: #101828;
+    --text-muted: #475467;
+    --accent-color: #0284c7; /* Azul Hielo Leviatán */
+    --accent-hover: #0369a1;
+    --border-color: #d0d5dd;
+    --shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 2rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    z-index: 100;
+}
+
+.brand h2 {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.brand h2 span {
+    color: var(--accent-color);
+}
+
+.eslogan {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 0.92rem;
+}
+
+.sidebar-nav a:hover, .sidebar-nav a.activo {
+    background-color: var(--card-bg);
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+}
+
+.sidebar-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.contador-visitas {
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+}
+
+.btn-toggle {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.btn-toggle:hover {
+    border-color: var(--accent-color);
+}
+
+.content-area {
+    margin-left: 260px;
+    flex: 1;
+    padding: 2rem 3rem;
+    max-width: 1100px;
+}
+
+.top-bar {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+section {
+    display: none;
+}
+
+section.seccion-activa {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-banner {
+    background: linear-gradient(135deg, var(--card-bg), var(--sidebar-bg));
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.carrusel-cita {
+    background-color: var(--card-bg);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.2rem 1.5rem;
+    border-radius: var(--radius);
+    font-style: italic;
+    margin-bottom: 2rem;
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.grid-tres-columnas, .articulos-grid, .grid-descargas, .grid-musica {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.tarjeta-dash, article, .tarjeta-descarga, .tarjeta-musica, .panel-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.tarjeta-dash, article {
+    cursor: pointer;
+}
+
+.tarjeta-dash:hover, article:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.icono-card {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.subtexto {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.seccion-stats {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.stat-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    flex: 1;
+}
+
+.stat-numero {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: block;
+}
+
+.stat-etiqueta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.buscador-contenedor input, .input-grupo input, .contacto-form input, .contacto-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+
+.filtros-noticias, .filtros-contenedor {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.btn-filtro, .btn-filtro-tarea {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.btn-filtro.active, .btn-filtro-tarea.activo {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: 600;
+    border-color: var(--accent-color);
+}
+
+.badge-categoria {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.btn-accion {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    padding: 0.65rem 1.2rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.btn-accion:hover {
+    background-color: var(--accent-hover);
+}
+
+.tarjeta-musica.interactiva {
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta-musica.interactiva:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-color);
+}
+
+.tarjeta-musica.sonando {
+    border-color: var(--accent-color);
+    background-color: rgba(230, 57, 70, 0.15);
+}
+
+body.light-mode .tarjeta-musica.sonando {
+    background-color: rgba(2, 132, 199, 0.15);
+}
+
+.reproductor-global {
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.grid-opciones {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.btn-opcion {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius);
+    text-align: left;
+    cursor: pointer;
+}
+
+.btn-opcion:hover {
+    border-color: var(--accent-color);
+}
+
+.resultado-texto {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.barra-base {
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.barra-relleno {
+    height: 100%;
+    width: 0%;
+    background-color: var(--accent-color);
+}
+
+#lista-tareas {
+    list-style: none;
+}
+
+#lista-tareas li {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.8rem 1rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#lista-tareas li.completada span {
+    text-decoration: line-through;
+    color: var(--text-muted);
+}
+
+#lista-tareas li button {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-left: 0.4rem;
+}
+
+.faq-item {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .app-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .content-area {
+        margin-left: 0;
+        padding: 1.5rem;
+    }
+}

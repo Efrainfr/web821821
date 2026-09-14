@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>God of War - Portal del Valhalla</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="app-layout">
+    
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>God of <span>War</span></h2>
+                <p class="eslogan">"Debemos ser mejores."</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#inicio" class="nav-link activo" data-seccion="inicio">
+                    <span class="nav-icon"></span> Inicio
+                </a>
+                <a href="#seccion-articulos" class="nav-link" data-seccion="seccion-articulos">
+                    <span class="nav-icon"></span> Lore y Mitos
+                </a>
+                <a href="#seccion-armas" class="nav-link" data-seccion="seccion-armas">
+                    <span class="nav-icon"></span> Arsenal
+                </a>
+                <a href="#seccion-ost" class="nav-link" data-seccion="seccion-ost">
+                    <span class="nav-icon"></span> Canciones
+                </a>
+                <a href="#seccion-trivia" class="nav-link" data-seccion="seccion-trivia">
+                    <span class="nav-icon"></span> Quiz del Lore
+                </a>
+                <a href="#seccion-tareas" class="nav-link" data-seccion="seccion-tareas">
+                    <span class="nav-icon"></span> Caza de Trofeos
+                </a>
+                <a href="#seccion-contacto" class="nav-link" data-seccion="seccion-contacto">
+                    <span class="nav-icon"></span> Comunidad
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="contador-visitas">
+                    Guerreros: <span id="numero-visitas">0</span>
+                </div>
+                <button id="btn-modo-oscuro" class="btn-toggle" type="button">❄️ Tema Nórdico</button>
+            </div>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="content-area">
+
+            <!-- Sección: Inicio -->
+            <section id="inicio" class="seccion-activa">
+                <header class="top-bar">
+                    <p id="saludo-dinamico" class="saludo"></p>
+                </header>
+
+                <div class="hero-banner">
+                    <h2>Base de Conocimiento: God of War</h2>
+                    <p>Explora la historia de Kratos y Atreus, analiza el arsenal legendario de Midgard, escucha temas épicos y completa la lista de trofeos.</p>
+                </div>
+
+                <div class="carrusel-cita">
+                    "La venganza no te dará la paz que buscas. El ciclo termina aquí."
+                </div>
+
+                <div class="grid-tres-columnas">
+                    <div class="tarjeta-dash" data-articulo="La Evolución de Kratos: De Esparta a Midgard">
+                        <span class="icono-card"></span>
+                        <h3>Evolución de Kratos</h3>
+                        <p>El camino del Fantasma de Esparta hacia la redención como padre.</p>
+                    </div>
+                    <div class="tarjeta-dash" data-articulo="Atreus y la Profecía de Loki">
+                        <span class="icono-card"></span>
+                        <h3>El Destino de Atreus</h3>
+                        <p>El papel de Loki en el destino de los nueve reinos.</p>
+                    </div>
+                    <div class="tarjeta-dash" data-articulo="Mitología Griega vs Nórdica">
+                        <span class="icono-card"></span>
+                        <h3>Grecia vs Nórdico</h3>
+                        <p>Diferencias narrativas y de panteón entre ambas eras.</p>
+                    </div>
+                </div>
+
+                <div class="seccion-stats">
+                    <div class="stat-card">
+                        <span class="stat-numero" data-target="9">0</span>
+                        <span class="stat-etiqueta">Reinos Explorables</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-numero" data-target="100">0</span>
+                        <span class="stat-etiqueta">% Poder Espartano</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Lore y Mitos -->
+            <section id="seccion-articulos">
+                <h2>Archivos del Lore y Mitos</h2>
+
+                <div class="buscador-contenedor">
+                    <input type="text" id="buscador-articulos" placeholder="🔍 Buscar dioses, reinos o profecías...">
+                </div>
+
+                <div class="filtros-noticias">
+                    <button class="btn-filtro active" data-categoria="todas">Todas</button>
+                    <button class="btn-filtro" data-categoria="personajes">Personajes</button>
+                    <button class="btn-filtro" data-categoria="historia">Historia</button>
+                    <button class="btn-filtro" data-categoria="mitologia">Mitología</button>
+                </div>
+
+                <div class="articulos-grid" id="contenedor-articulos-grid">
+                    <article data-categoria="personajes" class="tarjeta-lectura" data-articulo="La Evolución de Kratos: De Esparta a Midgard">
+                        <span class="badge-categoria">Personajes</span>
+                        <h3>La Evolución de Kratos: De Esparta a Midgard</h3>
+                        <p>Un análisis de cómo la ira desenfrenada dio paso a la sabiduría y prudencia paternal...</p>
+                    </article>
+
+                    <article data-categoria="personajes" class="tarjeta-lectura" data-articulo="Atreus y la Profecía de Loki">
+                        <span class="badge-categoria">Personajes</span>
+                        <h3>Atreus y la Profecía de Loki</h3>
+                        <p>El descubrimiento de la identidad de Atreus y su importancia en el Ragnarök...</p>
+                    </article>
+
+                    <article data-categoria="mitologia" class="tarjeta-lectura" data-articulo="Mitología Griega vs Nórdica">
+                        <span class="badge-categoria">Mitología</span>
+                        <h3>Mitología Griega vs Nórdica</h3>
+                        <p>Comparativa del Panteón del Olimpo frente a los Ases y Vanir de los 9 Reinos...</p>
+                    </article>
+
+                    <article data-categoria="historia" class="tarjeta-lectura" data-articulo="El Destino de Faye">
+                        <span class="badge-categoria">Historia</span>
+                        <h3>El Destino de Faye</h3>
+                        <p>Laufey la Justa: Su legado oculto y cómo planeó el viaje de Kratos y Atreus...</p>
+                    </article>
+
+                    <article data-categoria="historia" class="tarjeta-lectura" data-articulo="La Traición de Odín">
+                        <span class="badge-categoria">Historia</span>
+                        <h3>La Traición de Odín</h3>
+                        <p>El Padre de Todos, su obsesión con el conocimiento y el control de los reinos...</p>
+                    </article>
+                </div>
+
+                <div id="vista-articulo" style="display: none;">
+                    <button id="btn-volver" class="btn-accion">← Volver a los archivos</button>
+                    <br><br>
+                    <span id="articulo-categoria" class="badge-categoria"></span>
+                    <span id="articulo-tiempo" style="font-size: 0.85rem; color: var(--text-muted); margin-left: 10px;"></span>
+                    <h2 id="articulo-titulo" style="margin-top: 0.5rem;"></h2>
+                    <div id="articulo-cuerpo" style="margin: 1rem 0;"></div>
+                    <h3>Registros Relacionados</h3>
+                    <ul id="articulo-relacionados" style="list-style: none; padding: 0; margin-top: 0.5rem;"></ul>
+                </div>
+            </section>
+
+            <!-- Sección: Arsenal y Armas -->
+            <section id="seccion-armas">
+                <h2>Arsenal de Guerra</h2>
+                <p class="subtexto">Inspecciona el equipo legendario utilizado en la saga:</p>
+
+                <div class="grid-descargas">
+                    <div class="tarjeta-descarga">
+                        <h4>Hacha Leviatán</h4>
+                        <p>Forjada por Brok y Sindri para Laufey. Infundida con hielo elemental de Niflheim.</p>
+                        <span class="badge-categoria">Elemento: Hielo</span>
+                    </div>
+                    <div class="tarjeta-descarga">
+                        <h4>Espadas del Caos</h4>
+                        <p>Atadas a la carne de Kratos por Ares. Arden con el fuego infernal del Inframundo.</p>
+                        <span class="badge-categoria">Elemento: Fuego</span>
+                    </div>
+                    <div class="tarjeta-descarga">
+                        <h4>Lanza Draupnir</h4>
+                        <p>Forjada a partir del anillo mágico Draupnir y la sangre de un dios. Multiplicación infinita.</p>
+                        <span class="badge-categoria">Elemento: Viento / Impacto</span>
+                    </div>
+                    <div class="tarjeta-descarga">
+                        <h4>Escudo Guardián</h4>
+                        <p>Regalo de bodas de Faye a Kratos. Capaz de desviar ataques pesados y contraatacar.</p>
+                        <span class="badge-categoria">Defensa / Parry</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Banda Sonora -->
+            <section id="seccion-ost">
+                <h2>Música</h2>
+                <p class="subtexto">Haz clic en cualquier pista para escuchar la composición:</p>
+
+                <div class="reproductor-global panel-box">
+                    <div class="info-reproduccion">
+                        <span>Reproduciendo: <strong id="cancion-activa-titulo">Ninguna pista seleccionada</strong></span>
+                    </div>
+                    <audio id="audio-player" controls preload="auto" style="width: 100%; margin-top: 0.5rem;"></audio>
+                </div>
+
+                <div class="grid-musica" style="margin-top: 1.5rem;">
+                    <div class="tarjeta-musica interactiva" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" data-titulo="God of War Main Theme - Bear McCreary">
+                        <div class="info-musica">
+                            <h4>God of War Main Theme </h4>
+                            <p>Bear McCreary</p>
+                            <span class="badge-categoria">Tema Principal de Kratos</span>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-musica interactiva" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" data-titulo="Memories of Mother - Bear McCreary">
+                        <div class="info-musica">
+                            <h4>Memories of Mother </h4>
+                            <p>Bear McCreary</p>
+                            <span class="badge-categoria">Tema de Faye / Emotivo</span>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-musica interactiva" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" data-titulo="Dragon - Bear McCreary">
+                        <div class="info-musica">
+                            <h4>The Dragon </h4><a href="tel:+"></a>
+                            <p>Bear McCreary</p>
+                            <span class="badge-categoria">Batalla de Jefes</span>
+                        </div>
+                    </div>
+
+                    <div class="tarjeta-musica interactiva" data-src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" data-titulo="Blood on the Snow - Hozier & Bear McCreary">
+                        <div class="info-musica">
+                            <h4>Blood on the Snow </h4>
+                            <p>Hozier & Bear McCreary</p>
+                            <span class="badge-categoria">Créditos de Ragnarök</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Quiz -->
+            <section id="seccion-trivia">
+                <h2>Pruebas de Sabiduría Nórdica</h2>
+                <div class="panel-box">
+                    <div id="contenedor-quiz">
+                        <h3 id="pregunta-quiz">Cargando prueba...</h3>
+                        <div id="opciones-quiz" class="grid-opciones"></div>
+                        <p id="resultado-quiz" class="resultado-texto"></p>
+                        <button id="btn-siguiente-quiz" class="btn-accion" style="display:none; margin-top:1rem;">Siguiente Pregunta</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección: Tareas / Trofeos -->
+            <section id="seccion-tareas">
+                <h2> Caza de Trofeos y Logros</h2>
+
+                <div class="progreso-contenedor panel-box">
+                    <div class="progreso-texto">
+                        <span>Progreso de Trofeos del Juego: </span>
+                        <strong id="porcentaje-progreso">0%</strong>
+                    </div>
+                    <div class="barra-base">
+                        <div id="barra-relleno" class="barra-relleno"></div>
+                    </div>
+                </div>
+
+                <form id="form-tarea" class="panel-box">
+                    <div class="input-grupo">
+                        <label for="input-tarea">Nuevo Desafío / Trofeo:</label>
+                        <input type="text" id="input-tarea" placeholder="Ej. Derrotar a la Reina Valquiria Sigrun..." required>
+                    </div>
+                    <button type="submit" class="btn-accion">Registrar Trofeo</button>
+                </form>
+
+                <div class="filtros-contenedor">
+                    <button id="filtro-todas" class="btn-filtro-tarea activo" data-filtro="todas">Todos</button>
+                    <button id="filtro-pendientes" class="btn-filtro-tarea" data-filtro="pendientes">Pendientes (<span id="count-pendientes">0</span>)</button>
+                    <button id="filtro-realizadas" class="btn-filtro-tarea" data-filtro="realizadas">Completados (<span id="count-realizadas">0</span>)</button>
+                </div>
+
+                <ul id="lista-tareas"></ul>
+            </section>
+
+            <!-- Sección: Comunidad -->
+            <section id="seccion-contacto">
+                <h2>Consejo de Sabios (Comunidad)</h2>
+
+                <div class="panel-box">
+                    <h3>Preguntas Frecuentes</h3>
+                    <details class="faq-item">
+                        <summary>¿En qué orden jugar la saga God of War?</summary>
+                        <p>Puedes jugarla en orden de lanzamiento comenzando por la saga griega (GoW 1, 2, 3) o iniciar directamente en el reinicio nórdico (God of War 2018 y Ragnarök).</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Cómo desbloquear la Lanza Draupnir?</summary>
+                        <p>Se obtiene progresando de manera natural en la historia principal de God of War Ragnarök durante la visita a Svartalfheim.</p>
+                    </details>
+                </div>
+
+                <div class="panel-box" style="margin-top: 1.5rem;">
+                    <h3>Envía un mensaje a la comunidad</h3>
+                    <form id="form-contacto" class="contacto-form">
+                        <input type="text" placeholder="Nombre de Guerrero" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <textarea rows="4" placeholder="Escribe tu teoría o mensaje..." required></textarea>
+                        <button type="submit" class="btn-accion">Enviar Mensaje</button>
+                        <div id="mensaje-exito" style="display: none; margin-top: 1rem; color: var(--accent-color); font-weight: bold;"></div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
